@@ -13,9 +13,9 @@ namespace guestbook
     public partial class _Default : Page
     {
         protected void Page_Load(object sender, EventArgs e) {
-
+            
             populateTable();
-
+            
         }
 
         protected void TextBox3_TextChanged(object sender, EventArgs e)
@@ -33,7 +33,7 @@ namespace guestbook
         {
             //When clicked, add to the database
 
-            string _connectionString2 = @"Data Source=DESKTOP-DARBDT6\SQLEXPRESS;Initial Catalog=commentPage;Integrated Security=True;Connect Timeout=15;Encrypt=False;TrustServerCertificate=True;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
+            string _connectionString2 = @"Data Source=mssql6.gear.host;Initial Catalog=mymsdatabase;Integrated Security=False;User ID=mymsdatabase;Password=starwars!;Connect Timeout=15;Encrypt=False;TrustServerCertificate=True;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
 
             using (SqlConnection con2 = new SqlConnection(_connectionString2))
             {
@@ -72,7 +72,7 @@ namespace guestbook
         }
         public void populateTable(){
             //render table with existing comments once user loads page
-            string _connectionString = @"Data Source=DESKTOP-DARBDT6\SQLEXPRESS;Initial Catalog=commentPage;Integrated Security=True;Connect Timeout=15;Encrypt=False;TrustServerCertificate=True;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
+            string _connectionString = @"Data Source=mssql6.gear.host;Initial Catalog=mymsdatabase;Integrated Security=False;User ID=mymsdatabase;Password=starwars!;Connect Timeout=15;Encrypt=False;TrustServerCertificate=True;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
 
             //When using the "using" statement, it auto closes connection when done executing the {} bit.
             using (SqlConnection con = new SqlConnection(_connectionString))
